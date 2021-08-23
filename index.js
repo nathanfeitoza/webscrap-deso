@@ -1,12 +1,13 @@
 require('dotenv').config();
 const puppeteer = require('puppeteer');
 const axios = require('axios');
+const path = require('path');
 const { createWriteStream, appendFileSync } = require('fs');
 
 const date = new Date();
 const fileNameByDate = `${date.getFullYear()}-${(date.getUTCMonth() + 1)}-${date.getDay()}-${date.getTime()}`;
-const downloadPath = './downloads/';
-const outputsPath = './outputs/';
+const downloadPath = path.resolve(__dirname, 'downloads');
+const outputsPath = path.resolve(__dirname, 'outputs');
 
 const saveLog = (data, error) => {
   appendFileSync(
