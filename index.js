@@ -100,7 +100,7 @@ const getBills = async () => {
     }, { urlDeso });
 
     console.log(`Searchs bill completed. Found ${bills.length} bill(s)`);
-    console.log(bills);
+    
     appendFileSync(
       `${outputsPath}/output-${fileNameByDate}.json`,
       `\n${JSON.stringify(bills, null, 2)}`
