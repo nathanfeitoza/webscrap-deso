@@ -76,7 +76,7 @@ const getBills = async () => {
 
       for (item of cells) {
         const billDate = item.querySelector('td:first-child').innerText;
-        const [year, month] = billDate.split('/');
+        const [month, year] = billDate.split('/');
         const value = item.querySelector('td:nth-child(2)').innerText;
         let linkDownload = item.querySelector('td:nth-child(3) a').getAttribute('href')
           .match(/\'gerarRelatorio2ViaContaAction.do+(.*)+\'/);
